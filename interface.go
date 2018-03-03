@@ -2,9 +2,37 @@ package dbi
 
 import (
 	"context"
+	"database/sql"
 	"database/sql/driver"
 	"reflect"
 	"time"
+)
+
+// type aliases
+type (
+	TxOptions      = sql.TxOptions
+	DBStats        = sql.DBStats
+	IsolationLevel = sql.IsolationLevel
+	NamedArgs      = sql.NamedArg
+	NullBool       = sql.NullBool
+	NullFloat64    = sql.NullFloat64
+	NullInt64      = sql.NullInt64
+	NullString     = sql.NullString
+	Out            = sql.Out
+	RawBytes       = sql.RawBytes
+	Scanner        = sql.Scanner
+)
+
+// const
+const (
+	LevelDefault IsolationLevel = iota
+	LevelReadUncommitted
+	LevelReadCommitted
+	LevelWriteCommitted
+	LevelRepeatableRead
+	LevelSnapshot
+	LevelSerializable
+	LevelLinearizable
 )
 
 type Execer interface {

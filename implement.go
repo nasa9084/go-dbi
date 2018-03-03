@@ -20,13 +20,6 @@ var (
 	Register = sql.Register
 )
 
-type (
-	// TxOptions is type alias of sql.TxOptions.
-	TxOptions = sql.TxOptions
-	// DBStats is type alias of sql.DBStats.
-	DBStats = sql.DBStats
-)
-
 type dbImpl struct {
 	*sql.DB
 }

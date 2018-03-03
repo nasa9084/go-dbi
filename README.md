@@ -14,13 +14,8 @@ so it's difficult to mocking database connection for tests.
 
 ## how to use
 
-this package has not support some structs below in database/sql package.
+you can replace database/sql into this package like below.
 
-* IsolationLevel
-* NamedArg
-* Null*
-* Out
-* RawBytes
-* Scanner
-
-if you're not using these structs, you can replace database/sql into this package.
+``` go
+import sql "github.com/nasa9084/go-dbi"
+```
