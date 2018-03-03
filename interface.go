@@ -21,6 +21,7 @@ type (
 	Out            = sql.Out
 	RawBytes       = sql.RawBytes
 	Scanner        = sql.Scanner
+	Result         = sql.Result
 )
 
 // const
@@ -87,11 +88,6 @@ type Stmt interface {
 	QueryContext(ctx context.Context, args ...interface{}) (Rows, error)
 	QueryRow(args ...interface{}) Row
 	QueryRowContext(ctx context.Context, args ...interface{}) Row
-}
-
-type Result interface {
-	LastInsertId() (int64, error)
-	RowsAffected() (int64, error)
 }
 
 type Rows interface {
